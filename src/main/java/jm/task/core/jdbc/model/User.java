@@ -59,4 +59,14 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append(id).append("|")
+                .append(name).append("|")
+                .append(lastName).append("|")
+                .append(age);
+        return str.toString();
+
+    }
 }
