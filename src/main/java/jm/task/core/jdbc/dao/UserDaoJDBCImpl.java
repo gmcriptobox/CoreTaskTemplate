@@ -12,7 +12,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     private static long USERS_COUNT = 0;
     private static final String TABLE_NAME = "User";
-    private static Connection connection = (Connection) Util.getConnection();
+    private static final Connection connection = Util.getConnection();
 
 
 
@@ -75,6 +75,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.setInt(4,age);
 
             statement.executeUpdate();
+            System.out.printf("User с именем – %s добавлен в базу данных\n", name);
 
         } catch (SQLException e) {
             System.out.println("Add error");
