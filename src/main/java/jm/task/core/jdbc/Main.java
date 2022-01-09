@@ -9,19 +9,12 @@ public class Main {
     public static void main(String[] args) {
         UserServiceImpl service = new UserServiceImpl();
 
-
-
-        service.dropUsersTable();
         service.createUsersTable();
-
-
 
         service.saveUser("Danil", "Danilovich", (byte)21);
         service.saveUser("Petr", "Petrov", (byte)26);
         service.saveUser("Alexandr", "Alexandrov",(byte) 30);
         service.saveUser("Roman", "Romanov", (byte)50);
-
-        service.removeUserById(0);
 
         service.getAllUsers().forEach((u)->System.out.println(u));
 
