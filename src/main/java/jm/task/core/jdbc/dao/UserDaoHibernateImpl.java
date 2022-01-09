@@ -83,6 +83,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.remove(session.get(User.class, id));
             transaction.commit();
         }catch(org.hibernate.HibernateException e){
+            sessionFactory.getCurrentSession().getTransaction().rollback();
             System.out.println("Remove user error");
         }
     }
@@ -100,6 +101,7 @@ public class UserDaoHibernateImpl implements UserDao {
             list = em.createQuery(personCriteria).getResultList();
             em.getTransaction().commit();
         }catch(org.hibernate.HibernateException e){
+            sessionFactory.getCurrentSession().getTransaction().rollback();
             System.out.println("GetList user error");
         }
         return list;
@@ -115,6 +117,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.createQuery(query).executeUpdate();
             transaction.commit();
         }catch(org.hibernate.HibernateException e){
+            sessionFactory.getCurrentSession().getTransaction().rollback();
             System.out.println("Clear error");
         }
     }
