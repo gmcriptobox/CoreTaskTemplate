@@ -114,6 +114,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setId(result.getLong("Id"));
                 users.add(user);
             }
+            result.close();
         } catch (SQLException e) {
             try {
                 connection.rollback();
