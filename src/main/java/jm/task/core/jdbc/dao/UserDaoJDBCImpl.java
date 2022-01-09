@@ -36,12 +36,6 @@ public class UserDaoJDBCImpl implements UserDao {
                         + "Name VARCHAR(255) NOT NULL,"
                         + "LastName VARCHAR(255) NOT NULL,"
                         + "Age INTEGER NOT NULL)";
-                        /*+ "PRIMARY KEY (UID))";/*"CREATE " + TABLE_NAME
-                        +" (Id BIGINT NOT NULL,"
-                        +"Name VARCHAR(255),"
-                        +"LastName VARCHAR(255),"
-                        +"Age INTEGER)";*/
-                        //+"PRIMARY KEY (UID))";
                 statement.execute(sqlQuery);
             }
         } catch (SQLException e) {
