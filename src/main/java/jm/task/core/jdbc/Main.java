@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         UserServiceImpl service = new UserServiceImpl();
 
+        service.dropUsersTable();
         service.createUsersTable();
 
         service.saveUser("Danil", "Danilovich", (byte)21);
