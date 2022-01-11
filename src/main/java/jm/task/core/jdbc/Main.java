@@ -18,6 +18,7 @@ public class Main {
 
         service.getAllUsers().forEach((u)->System.out.println(u));
 
+        service.removeUserById(1);
         service.cleanUsersTable();
 
         service.dropUsersTable();
